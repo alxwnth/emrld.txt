@@ -1,0 +1,13 @@
+<h1><a href="/" class="title">emrld.txt</a></h1>
+
+<%= render "form", task: @task %>
+
+<% if params[:q] %>
+  <% @tasks = Task.where("description LIKE ?", "%" + params[:q].strip + "%") %>
+<% else %>
+  <% tasks = Task.all %>
+<% end %>
+
+<div data-controller="tasks">
+  <%= render @tasks %>
+</div>

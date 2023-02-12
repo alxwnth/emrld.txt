@@ -1,0 +1,11 @@
+<%= form_with(model: task, html: { autocomplete: "off" }) do |form| %>
+  <% if notice.present? %>
+    <p>
+      <%= notice %>
+    </p>
+  <% end %>
+  <div>
+    <%= form.text_field :description, placeholder: "I'm going to..." %>
+    <%= form.submit "OK" %>
+  </div>
+<% end %>
