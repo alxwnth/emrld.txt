@@ -15,11 +15,19 @@
  */
 
 html {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+}
+
+body {
+    background-color: #fff;
 }
 
 .title {
     color: #000;
+}
+
+.logo {
+    display: inline-block;
 }
 
 a:hover {
@@ -28,7 +36,15 @@ a:hover {
 
 .task {
     display: block ruby;
-    margin: 1em 0 1em 0;
+    /*border-bottom: 1px dotted #868686;*/
+}
+
+.task-wrapper {
+    padding: .5em 0 .5em 0;
+}
+
+.task-wrapper:nth-child(even) {
+    background-color: #f5f5f5;
 }
 
 .priority,
@@ -37,8 +53,14 @@ a:hover {
     font-weight: bold;
 }
 
+.task-content .context,
+.task-content .project {
+    font-weight: normal;
+}
+
 a {
     color: inherit;
+    text-decoration: underline dotted;
 }
 
 .context {
@@ -49,11 +71,128 @@ a {
     color: #021993;
 }
 
+.w9 {
+    width: 90%;
+}
+
+.margin-auto {
+    margin: 0 auto 0 auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.fields-wrapper {
+
+}
+
 .created-date,
 .completed-date {
     color: #666666;
 }
 
+.completed span,
+.completed p,
 .completed form {
     text-decoration: line-through;
+    color: rgb(115, 115, 115)
 }
+
+.add-task,
+.edit-task {
+    margin-bottom: 1em;
+}
+
+.edit-task {
+    display: block ruby;
+}
+
+.add-task,
+.search {
+    display: inline-block;
+}
+
+.search {
+    margin-left: 1em;
+}
+
+button {
+    background: none !important;
+    border: none;
+    padding: 0 !important;
+    color: #000;
+    text-decoration: underline dotted;
+    cursor: pointer;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#task_description {
+    width: 44em;
+}
+
+.tasks {
+    margin: 1em auto 0 auto;
+}
+
+.task-content {
+    display: ruby;
+}
+
+.task-actions {
+    float: right;
+    display: block ruby;
+    margin-right: 1em;
+    font-size: .8em;
+}
+
+.divider {
+    height: 0.5em;
+}
+
+h2 {
+    margin: .5em auto .5em auto;
+}
+
+h3 {
+    margin: 1em auto -.5em auto;
+}
+
+.version {
+    display: inline;
+    font-size: .8em;
+    margin-right: 1em;
+}
+
+.toolbar {
+    margin-top: 1em;
+    font-size: 0.8em;
+    color: #000;
+    display: inline-block;
+}
+
+.toolbar ul {
+    list-style: none;
+    display: inline;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.toolbar li {
+    display: inline;
+    padding-right: 0.5em;
+}
+
+.icon {
+    width: 43px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -7px;
+}
+
+.nothing-here {
+    font-style: italic;
+    color: rgb(115, 115, 115);
+    text-align: center;
+}
+

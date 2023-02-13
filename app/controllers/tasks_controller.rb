@@ -50,7 +50,12 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    redirect_to tasks_url
+    redirect_to request.referrer
+  end
+
+  def tasklog
+    @tasks = Task.where(completed: true)
+    render "tasklog"
   end
 
   private

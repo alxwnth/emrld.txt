@@ -1,13 +1,37 @@
-<h1><a href="/" class="title">emrld.txt</a></h1>
-
-<%= render "form", task: @task %>
-
+<div class="w9 margin-auto text-center">
+  <div class="add-task">
+    <%= render "form", task: @task %>
+  </div>
+  <div class="search">
+    <%= render "search" %>
+  </div>
+</div>
 <% if params[:q] %>
   <% @tasks = Task.where("description LIKE ?", "%" + params[:q].strip + "%") %>
+  <h2 class="w9"><%= params[:q] %></h2>
 <% else %>
-  <% tasks = Task.all %>
+  <% @tasks = Task.all %>
 <% end %>
+<div class="w9 margin-auto">
+  <% if contexts(@tasks).any? %>
+    <div class="contexts">
+      <% contexts(@tasks).each do |context| %>
+        <%= parse_task(context).html_safe %>
+      <% end %>
+    </div>
+  <% end %>
+  <% if contexts(@tasks).any? and projects(@tasks).any? %>
+    <div class="divider"></div>
+  <% end %>
+  <% if projects(@tasks).any? %>
+    <div class="projects">
+      <% projects(@tasks).each do |context| %>
+        <%= parse_task(context).html_safe %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
 
-<div data-controller="tasks">
-  <%= render @tasks %>
+<div data-controller="tasks" class="tasks w9">
+  <%= render uncompleted(@tasks) %>
 </div>

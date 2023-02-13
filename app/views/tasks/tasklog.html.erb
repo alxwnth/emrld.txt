@@ -1,0 +1,10 @@
+<h2 class="w9">Tasklog</h2>
+<div data-controller="tasks" class="tasks w9">
+  <% if completed(@tasks).present? %>
+    <%= render completed(@tasks) %>
+  <% else %>
+    <div class="nothing-here">
+      <p>Your tasklog is clear.</p>
+    </div>
+  <% end %>
+</div>

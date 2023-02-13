@@ -1,24 +1,26 @@
-<turbo-frame id="<%= dom_id task %>">
-  <div class="task <%= 'completed' if task.completed %>">
-    <%= form_with(model: task) do |form| %>
-      <%= form.check_box :completed,
-                         data: {
-                           id: task.id,
-                           action: "tasks#toggle"
-                         } %>
-      <span class="priority"><%= priority(task.description) %></span>
-      <span class="created-date"><%= task.creation_time.strftime("%Y-%m-%d") %></span>
-      <% if task.completion_time? %>
-        <span class="completed-date"><%= task.completion_time.strftime("%Y-%m-%d") %></span>
+<div class="task-wrapper">
+  <turbo-frame id="<%= dom_id task %>">
+    <div class="task <%= 'completed' if task.completed %>">
+      <%= form_with(model: task) do |form| %>
+        <%= form.check_box :completed,
+                           data: {
+                             id: task.id,
+                             action: "tasks#toggle"
+                           } %>
+        <span class="priority"><%= priority(task.description) %></span>
+        <span class="created-date"><%= task.creation_time.strftime("%Y-%m-%d") %></span>
+        <% if task.completion_time? %>
+          <span class="completed-date"><%= task.completion_time.strftime("%Y-%m-%d") %></span>
+        <% end %>
+        <span class="task-content"><%= parse_task(task.description).html_safe %></span>
       <% end %>
-      <%= parse_task(task.description).html_safe %>
-    <% end %>
-    <%= link_to "Edit", edit_task_path(task) %>
-    <div>
-      <%= button_to "Delete", task_path(task),
-                    method: :delete,
-                    data: { "turbo-frame": "_top" }
-      %>
+      <div class="task-actions">
+        <%= link_to "Edit", edit_task_path(task) %>
+        <%= button_to "Delete", task_path(task),
+                      method: :delete,
+                      data: { "turbo-frame": "_top" }
+        %>
+      </div>
     </div>
-  </div>
-</turbo-frame>
+  </turbo-frame>
+</div>
