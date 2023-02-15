@@ -1,7 +1,5 @@
 # emrld.txt 
 
-<img src="app/assets/images/logo.svg" width="100px">
-
 emrld.txt is a simple self-hosted to-do list web app compatible with [todo.txt](http://todotxt.org/) format.
 
 <img src="screenshot.png">
