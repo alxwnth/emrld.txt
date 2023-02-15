@@ -196,3 +196,25 @@ h3 {
     text-align: center;
 }
 
+.import-wrapper {
+    margin: 1em auto 0 auto;
+    width: 70%;
+}
+
+.import-form textarea {
+    resize: vertical;
+    display: block;
+    width: 100%;
+    height: 300px;
+}
+
+.import-commands {
+    margin-top: 1em;
+}
+
+.checkbox-with-label {
+    display: inline;
+}
+
+
+

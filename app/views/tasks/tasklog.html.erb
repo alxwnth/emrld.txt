@@ -1,4 +1,9 @@
-<h2 class="w9">Tasklog</h2>
+<div class="w9 margin-auto">
+  <h2 style="display: inline-block">Tasklog</h2>
+  <div style="display: inline-block; width: 100%; text-align: right;">
+    <%= link_to "Purge completed", purge_path %>
+  </div>
+</div>
 <div data-controller="tasks" class="tasks w9">
   <% if completed(@tasks).present? %>
     <%= render completed(@tasks) %>

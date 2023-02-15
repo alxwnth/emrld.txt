@@ -7,10 +7,10 @@
   </div>
 </div>
 <% if params[:q] %>
-  <% @tasks = Task.where("description LIKE ?", "%" + params[:q].strip + "%") %>
+  <% @tasks = uncompleted(Task.where("description LIKE ?", "%" + params[:q].strip + "%")) %>
   <h2 class="w9"><%= params[:q] %></h2>
 <% else %>
-  <% @tasks = Task.all %>
+  <% @tasks = uncompleted(Task.all) %>
 <% end %>
 <div class="w9 margin-auto">
   <% if contexts(@tasks).any? %>

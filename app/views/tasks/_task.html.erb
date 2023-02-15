@@ -8,7 +8,9 @@
                              action: "tasks#toggle"
                            } %>
         <span class="priority"><%= priority(task.description) %></span>
-        <span class="created-date"><%= task.creation_time.strftime("%Y-%m-%d") %></span>
+        <% if task.creation_time? %>
+          <span class="created-date"><%= task.creation_time.strftime("%Y-%m-%d") %></span>
+        <% end %>
         <% if task.completion_time? %>
           <span class="completed-date"><%= task.completion_time.strftime("%Y-%m-%d") %></span>
         <% end %>

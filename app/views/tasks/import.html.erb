@@ -1,0 +1,20 @@
+<div class="import-wrapper">
+  <%= form_for :task, url: batch_add_path, html: { autocomplete: "off" }, class: "import-form" do |form| %>
+    <% if notice.present? %>
+      <p>
+        <%= notice %>
+      </p>
+    <% end %>
+    <div>
+      <%= form.text_area :tasklist, class: "margin-auto" %>
+      <div class="import-commands">
+        <%= form.submit "Import" %>
+        <div class="checkbox-with-label">
+          <%= form.check_box :add_dates %>
+          <%= form.label "Add missing creation dates (will be set to today)" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
