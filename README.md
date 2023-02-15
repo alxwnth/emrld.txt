@@ -13,6 +13,18 @@ emrld.txt is a simple self-hosted to-do list web app compatible with [todo.txt](
 - Batch add tasks/import
 - Export
 
+# Run
+
+The easiest way is to just run a Docker container
+
+`docker run -it -p 3000:3000 alxwnth/emrld.txt:0.1.0`
+
+Also you can run it with Rails
+
+`rails server`
+
+_Keep in mind that neither of this options are optimized for production._
+
 # To-do
 
 - [ ] Night mode
