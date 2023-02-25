@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  emrld:
+    image: emrld.txt
+    command: bash -c "bundle exec rake db:migrate && bundle exec puma -C config/puma.rb"
+    ports:
+      - "3000:3000"
+    environment:
+      RAILS_ENV: production
+      SERVER_HOST_NAME: localhost
