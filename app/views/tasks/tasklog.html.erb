@@ -1,15 +1,21 @@
-<div class="w9 margin-auto">
-  <h2 style="display: inline-block">Tasklog</h2>
-  <div style="display: inline-block; width: 100%; text-align: right;">
-    <%= link_to "Purge completed", purge_path %>
-  </div>
-</div>
-<div data-controller="tasks" class="tasks w9">
-  <% if completed(@tasks).present? %>
-    <%= render completed(@tasks) %>
-  <% else %>
-    <div class="nothing-here">
-      <p>Your tasklog is clear.</p>
+<div class="row-fluid">
+  <div class="span12">
+    <div class="w9 margin-auto">
+      <h1 style="display: inline-block">Tasklog</h1>
+      <div style="display: inline-block; width: 100%; text-align: right;">
+        <%= link_to "Purge completed", purge_path %>
+      </div>
     </div>
-  <% end %>
+    <div data-controller="tasks" class="tasks w9">
+      <% if completed(@tasks).present? %>
+        <table class="table table-striped">
+          <%= render completed(@tasks) %>
+        </table>
+      <% else %>
+        <div class="nothing-here">
+          <p>Your tasklog is clear.</p>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>

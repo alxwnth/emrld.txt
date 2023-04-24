@@ -14,29 +14,26 @@
  *= require_self
  */
 
-html {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
-}
-
 body {
-    background-color: #fff;
+    padding-top: 60px;
 }
 
-.title {
-    color: #000;
+form {
+    margin-bottom: 0 !important;
 }
 
-.logo {
-    display: inline-block;
-}
-
-a:hover {
-    text-decoration: none;
-}
-
-.task {
-    display: block ruby;
+.task td {
+    vertical-align: middle !important;
     /*border-bottom: 1px dotted #868686;*/
+}
+
+.task .checkbox {
+    margin-top: -6px;
+}
+
+.task .checkbox input {
+    height: 16px;
+    width: 16px;
 }
 
 .task-wrapper {
@@ -58,54 +55,27 @@ a:hover {
     font-weight: normal;
 }
 
-a {
-    color: inherit;
-    text-decoration: underline dotted;
+.context a {
+    color: #018e00
 }
 
-.context {
-    color: #018e00;
-}
-
-.project {
+.project a {
     color: #021993;
-}
-
-.w9 {
-    width: 90%;
-}
-
-.margin-auto {
-    margin: 0 auto 0 auto;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.fields-wrapper {
-
-}
-
-.created-date,
-.completed-date {
-    color: #666666;
 }
 
 .completed span,
 .completed p,
 .completed form {
     text-decoration: line-through;
-    color: rgb(115, 115, 115)
-}
-
-.add-task,
-.edit-task {
-    margin-bottom: 1em;
+    color: rgb(115, 115, 115);
 }
 
 .edit-task {
     display: block ruby;
+}
+
+.add-task {
+    width: 99%;
 }
 
 .add-task,
@@ -117,22 +87,30 @@ a {
     margin-left: 1em;
 }
 
-button {
-    background: none !important;
-    border: none;
-    padding: 0 !important;
+.sidebar-section-head {
     color: #000;
-    text-decoration: underline dotted;
-    cursor: pointer;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    display: inline-block;
+    width: 100%;
+}
+
+.sidebar-section-head a:any-link {
+    color: #000;
+    text-decoration: none;
+    outline: none;
 }
 
 #task_description {
-    width: 44em;
+    width: 100%;
 }
 
 .tasks {
     margin: 1em auto 0 auto;
+    width: 100%;
+}
+
+.tasks label {
+    margin-bottom: 0;
 }
 
 .task-content {
@@ -141,9 +119,12 @@ button {
 
 .task-actions {
     float: right;
-    display: block ruby;
-    margin-right: 1em;
-    font-size: .8em;
+    display: flex;
+}
+
+.task-actions a,
+.task-actions button {
+    padding: 0 0.5em;
 }
 
 .divider {
@@ -217,4 +198,36 @@ h3 {
 }
 
 
+.cool-brand {
+    margin-left: 20px;
+    float: left;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .1), 0 0 30px rgba(255, 255, 255, .4);
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    transition: all .2s linear;
+    font-size: 20px;
+    display: block;
+    padding: 10px 20px 10px;
+}
 
+.created-date {
+    color: #5b5b5b;
+}
+
+/*.navbar .brand {*/
+/*    display: block;*/
+/*    float: left;*/
+/*    padding: 10px 20px 10px;*/
+/*    margin-left: -20px;*/
+/*    font-size: 20px;*/
+/*    font-weight: 200;*/
+/*    color: #777;*/
+/*    text-shadow: 0 1px 0 #fff;*/
+/*}*/
+
+.cool-brand:hover {
+    text-decoration: none;
+    color: #fff;
+}

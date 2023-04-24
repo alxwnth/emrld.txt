@@ -1,7 +1,7 @@
 <%= form_tag tasks_path, :method => 'get', html: { autocomplete: "off" } do %>
   <p>
-    <%= text_field_tag :q, params[:q], placeholder: "I'm searching for..." %>
-    <%= submit_tag "Search", :q => nil %>
+    <%= text_field_tag :q, params[:q], style: "margin-bottom: 0px", placeholder: "I'm searching for..." %>
+    <%= submit_tag  "Search", class: "btn", :q => nil %>
   </p>
 <% end %>
 

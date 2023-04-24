@@ -1,12 +1,17 @@
-<div class="task-wrapper">
-  <turbo-frame id="<%= dom_id task %>">
-    <div class="task <%= 'completed' if task.completed %>">
-      <%= form_with(model: task) do |form| %>
-        <%= form.check_box :completed,
-                           data: {
-                             id: task.id,
-                             action: "tasks#toggle"
-                           } %>
+<tr class="task">
+  <turbo-frame id="<%= dom_id task %>
+  <%= 'completed' if task.completed %>">
+    <%= form_with(model: task) do |form| %>
+      <td style="width: 20px;">
+        <label class="checkbox">
+          <%= form.check_box :completed,
+                             data: {
+                               id: task.id,
+                               action: "tasks#toggle"
+                             } %>
+        </label>
+      </td>
+      <td>
         <span class="priority"><%= priority(task.description) %></span>
         <% if task.creation_time? %>
           <span class="created-date"><%= task.creation_time.strftime("%Y-%m-%d") %></span>
@@ -15,14 +20,17 @@
           <span class="completed-date"><%= task.completion_time.strftime("%Y-%m-%d") %></span>
         <% end %>
         <span class="task-content"><%= parse_task(task.description).html_safe %></span>
-      <% end %>
+    <% end %>
+    <td>
       <div class="task-actions">
-        <%= link_to "Edit", edit_task_path(task) %>
+        <%= link_to "Edit", edit_task_path(task), class: "btn btn-link" %>
         <%= button_to "Delete", task_path(task),
                       method: :delete,
-                      data: { "turbo-frame": "_top" }
+                      data: { "turbo-frame": "_top" },
+                      class: "btn btn-link"
         %>
       </div>
-    </div>
+    </td>
   </turbo-frame>
-</div>
+  </td>
+</tr>

@@ -7,9 +7,10 @@
     <% end %>
     <div>
       <%= form.text_area :tasklist, class: "margin-auto" %>
-      <div class="import-commands">
-        <%= form.submit "Import" %>
-        <div class="checkbox-with-label">
+      <div style="display: inline-flex">
+
+        <%= form.submit "Import", class: "btn btn-primary" %>
+        <div class="checkbox" style="margin-top: 4px; margin-left: 1em">
           <%= form.check_box :add_dates %>
           <%= form.label "Add missing creation dates (will be set to today)" %>
         </div>
